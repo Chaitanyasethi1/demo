@@ -1,6 +1,15 @@
 @import "tailwindcss";
 @config "../tailwind.config.js";
 
+@theme {
+  --animate-marquee: marquee 25s linear infinite;
+  
+  @keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+}
+
 @layer base {
   body {
     @apply bg-earth-light text-gray-900 font-sans antialiased;
