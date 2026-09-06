@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import logo from '../../assets/logo.jpg';
 
 export function Header() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
@@ -32,9 +33,9 @@ export function Header() {
           </div>
 
           {/* Logo (Centered) */}
-          <div className="flex-1 md:flex-none text-center">
-            <a href="/" className="text-4xl md:text-5xl font-black tracking-tighter text-black uppercase">
-              Poshanful
+          <div className="flex-1 md:flex-none flex justify-center text-center">
+            <a href="/" className="inline-block">
+              <img src={logo} alt="Organic Grocery" className="h-16 md:h-20 object-contain" />
             </a>
           </div>
 
