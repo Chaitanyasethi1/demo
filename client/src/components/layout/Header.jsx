@@ -5,6 +5,7 @@ export function Header() {
   const [isCartOpen, setIsCartOpen] = useState(false);
 
   return (
+    <>
     <div className="sticky top-0 z-50 w-full flex flex-col shadow-sm">
       {/* Top Announcement Bar */}
       <div className="bg-black text-white text-xs md:text-sm font-bold uppercase tracking-widest text-center py-3 relative overflow-hidden">
