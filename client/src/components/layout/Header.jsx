@@ -5,61 +5,62 @@ export function Header() {
   const [isCartOpen, setIsCartOpen] = useState(false);
 
   return (
-    <>
+    <div className="sticky top-0 z-50 w-full flex flex-col shadow-sm">
       {/* Top Announcement Bar */}
-      <div className="bg-black text-white text-xs font-bold uppercase tracking-widest text-center py-2 relative overflow-hidden">
+      <div className="bg-black text-white text-xs md:text-sm font-bold uppercase tracking-widest text-center py-3 relative overflow-hidden">
         <div className="animate-marquee whitespace-nowrap inline-block">
-          <span className="mx-4">FREE SHIPPING ON ALL ORDERS OVER ₹1000</span>
-          <span className="mx-4">•</span>
-          <span className="mx-4">100% ORGANIC CERTIFIED</span>
-          <span className="mx-4">•</span>
-          <span className="mx-4">FARM TO TABLE</span>
-          <span className="mx-4">•</span>
-          <span className="mx-4">PURE & UNADULTERATED</span>
+          <span className="mx-6">FREE SHIPPING ON ALL ORDERS OVER ₹1000</span>
+          <span className="mx-6">•</span>
+          <span className="mx-6">100% ORGANIC CERTIFIED</span>
+          <span className="mx-6">•</span>
+          <span className="mx-6">FARM TO TABLE</span>
+          <span className="mx-6">•</span>
+          <span className="mx-6">PURE & UNADULTERATED</span>
         </div>
       </div>
 
-      <header className="sticky top-0 z-40 bg-white border-b border-gray-100 shadow-sm">
+      <header className="bg-white border-b border-gray-100">
         {/* Main Header Row */}
-        <div className="container mx-auto px-4 h-20 flex items-center justify-between">
+        <div className="container mx-auto px-4 h-24 flex items-center justify-between">
           
           {/* Mobile Menu Icon (Left on mobile) */}
           <div className="md:hidden flex-1">
-            <button className="text-black">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
+            <button className="text-black p-2">
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
             </button>
           </div>
 
           {/* Logo (Centered) */}
           <div className="flex-1 md:flex-none text-center">
-            <a href="/" className="text-3xl md:text-4xl font-black tracking-tighter text-black uppercase">
+            <a href="/" className="text-4xl md:text-5xl font-black tracking-tighter text-black uppercase">
               Poshanful
             </a>
           </div>
 
           {/* Desktop Nav (Center-Left) */}
-          <nav className="hidden md:flex flex-1 justify-center space-x-8">
-            <a href="#" className="text-xs font-bold tracking-widest uppercase text-black hover:text-gray-500 transition-colors">Shop</a>
-            <a href="#" className="text-xs font-bold tracking-widest uppercase text-black hover:text-gray-500 transition-colors">Our Story</a>
-            <a href="#" className="text-xs font-bold tracking-widest uppercase text-black hover:text-gray-500 transition-colors">Farms</a>
-            <a href="#" className="text-xs font-bold tracking-widest uppercase text-black hover:text-gray-500 transition-colors">Contact</a>
+          <nav className="hidden md:flex flex-1 justify-center space-x-12">
+            <a href="#" className="text-sm font-bold tracking-widest uppercase text-black hover:text-gray-500 transition-colors">Shop</a>
+            <a href="#" className="text-sm font-bold tracking-widest uppercase text-black hover:text-gray-500 transition-colors">Our Story</a>
+            <a href="#" className="text-sm font-bold tracking-widest uppercase text-black hover:text-gray-500 transition-colors">Farms</a>
+            <a href="#" className="text-sm font-bold tracking-widest uppercase text-black hover:text-gray-500 transition-colors">Contact</a>
           </nav>
 
           {/* Icons (Right) */}
-          <div className="flex-1 flex items-center justify-end space-x-5">
+          <div className="flex-1 flex items-center justify-end space-x-6">
             <button className="text-black hover:text-gray-500 hidden md:block">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
             </button>
             <button onClick={() => setIsLoginOpen(true)} className="text-black hover:text-gray-500 hidden md:block">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
             </button>
-            <button onClick={() => setIsCartOpen(true)} className="text-black hover:text-gray-500 relative flex items-center">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
-              <span className="absolute -top-2 -right-2 bg-black text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+            <button onClick={() => setIsCartOpen(true)} className="text-black hover:text-gray-500 relative flex items-center p-1">
+              <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
+              <span className="absolute top-0 right-0 bg-black text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
             </button>
           </div>
         </div>
       </header>
+    </div>
 
       {/* Login Modal Stub */}
       {isLoginOpen && (
