@@ -102,17 +102,69 @@ export function Home() {
         </section>
       </main>
       
-      {/* Footer Placeholder for visual balance */}
-      <footer className="bg-black text-white py-20 px-4 mt-12">
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div>
-            <h2 className="text-4xl font-black tracking-tighter uppercase mb-6">Poshanful</h2>
-            <p className="text-gray-400 max-w-sm">Premium organic staples, sourced ethically and delivered with care.</p>
+      <footer className="bg-black text-white pt-24 pb-12 px-4 mt-12">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+            
+            {/* Brand & Newsletter */}
+            <div className="md:col-span-5">
+              <h2 className="text-4xl font-black tracking-tighter uppercase mb-6">Poshanful</h2>
+              <p className="text-gray-400 max-w-sm mb-8 leading-relaxed">
+                Premium organic staples and nutrition, sourced ethically and delivered directly to your doorstep. Pure, unadulterated goodness.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 max-w-md">
+                <input 
+                  type="email" 
+                  placeholder="Enter your email" 
+                  className="bg-transparent border-b border-gray-600 px-0 py-3 text-white focus:outline-none focus:border-white transition-colors w-full"
+                />
+                <button className="bg-white text-black px-8 py-3 uppercase tracking-widest text-xs font-bold hover:bg-gray-200 transition-colors whitespace-nowrap">
+                  Subscribe
+                </button>
+              </div>
+            </div>
+
+            {/* Links - Shop */}
+            <div className="md:col-span-2 md:col-start-7">
+              <h3 className="text-sm font-bold uppercase tracking-widest mb-6 text-gray-500">Shop</h3>
+              <ul className="space-y-4">
+                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">All Products</a></li>
+                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Best Sellers</a></li>
+                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">New Arrivals</a></li>
+                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Gift Cards</a></li>
+              </ul>
+            </div>
+
+            {/* Links - Support */}
+            <div className="md:col-span-2">
+              <h3 className="text-sm font-bold uppercase tracking-widest mb-6 text-gray-500">Support</h3>
+              <ul className="space-y-4">
+                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
+                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Shipping & Returns</a></li>
+                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Track Order</a></li>
+                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Contact Us</a></li>
+              </ul>
+            </div>
+
+            {/* Links - Social */}
+            <div className="md:col-span-2">
+              <h3 className="text-sm font-bold uppercase tracking-widest mb-6 text-gray-500">Follow Us</h3>
+              <ul className="space-y-4">
+                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Instagram</a></li>
+                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Twitter</a></li>
+                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Facebook</a></li>
+                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Pinterest</a></li>
+              </ul>
+            </div>
+
           </div>
-          <div className="flex md:justify-end">
-            <div className="flex space-x-6">
-              <a href="#" className="hover:text-gray-300 transition-colors uppercase tracking-widest text-sm font-semibold">Instagram</a>
-              <a href="#" className="hover:text-gray-300 transition-colors uppercase tracking-widest text-sm font-semibold">Twitter</a>
+          
+          {/* Bottom Bar */}
+          <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+            <p>&copy; {new Date().getFullYear()} Poshanful. All rights reserved.</p>
+            <div className="flex space-x-6 mt-4 md:mt-0">
+              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
             </div>
           </div>
         </div>
