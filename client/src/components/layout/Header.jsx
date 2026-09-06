@@ -34,8 +34,8 @@ export function Header() {
 
           {/* Logo (Centered) */}
           <div className="flex-1 md:flex-none flex justify-center text-center">
-            <a href="/" className="flex justify-center items-center w-16 h-16 md:w-24 md:h-24 rounded-full border-2 border-black overflow-hidden bg-white">
-              <img src={logo} alt="Organic Grocery" className="w-full h-full object-cover scale-[1.3]" />
+            <a href="/" className="inline-block py-2">
+              <img src={logo} alt="Organic Grocery" className="h-16 md:h-20 object-contain" />
             </a>
           </div>
 
