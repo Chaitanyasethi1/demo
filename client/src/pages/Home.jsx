@@ -263,72 +263,82 @@ export function Home() {
 
       </main>
       
-      {/* Footer */}
-      <footer className="bg-black text-white pt-24 pb-12 px-4">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+      {/* 6. Comprehensive Footer */}
+      <footer className="bg-white border-t border-gray-100 pt-20 pb-10 px-4 relative overflow-hidden">
+        <div className="container mx-auto max-w-7xl flex flex-col md:flex-row justify-between items-start gap-12 relative z-10">
+          
+          {/* Left: Logo */}
+          <div className="md:w-1/4 flex flex-col items-center md:items-start text-center md:text-left">
+            <img src={logo} alt="Poshanful Logo" className="h-24 w-24 object-cover mb-4 rounded-full border border-gray-200 p-1" />
+            <h2 className="text-2xl font-black uppercase tracking-tighter text-black leading-none mt-2">Poshanful<br/>Organic Farms</h2>
+          </div>
+
+          {/* Center: Newsletter & Links */}
+          <div className="md:w-2/4 flex flex-col items-center text-center">
+            <h3 className="text-xl md:text-2xl font-black uppercase tracking-widest mb-2 text-black">Thoughtfully Crafted Food</h3>
+            <p className="text-gray-500 text-sm mb-6 max-w-md">Subscribe for special offers, newsletters and become a part of our movement</p>
             
-            {/* Brand & Newsletter */}
-            <div className="md:col-span-5">
-              <h2 className="text-4xl font-black tracking-tighter uppercase mb-6">Poshanful</h2>
-              <p className="text-gray-400 max-w-sm mb-8 leading-relaxed text-sm">
-                Premium organic staples and nutrition, sourced ethically and delivered directly to your doorstep. Pure, unadulterated goodness.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 max-w-md">
-                <input 
-                  type="email" 
-                  placeholder="Enter your email" 
-                  className="bg-transparent border-b border-gray-600 px-0 py-3 text-white focus:outline-none focus:border-white transition-colors w-full text-sm"
-                />
-                <button className="bg-white text-black px-8 py-3 uppercase tracking-widest text-xs font-bold hover:bg-gray-200 transition-colors whitespace-nowrap">
-                  Subscribe
-                </button>
+            {/* Newsletter Input */}
+            <div className="w-full max-w-md flex items-center border border-gray-300 p-1 mb-8">
+              <input type="email" placeholder="Your e-mail" className="flex-1 p-3 outline-none text-sm bg-transparent" />
+              <button className="p-3 text-gray-400 hover:text-black transition-colors">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+              </button>
+            </div>
+
+            {/* Links */}
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs md:text-sm font-bold uppercase tracking-widest text-black mb-8">
+              <a href="#" className="hover:text-gray-500">Categories</a>
+              <a href="#" className="hover:text-gray-500 md:border-l md:border-gray-300 md:pl-6">General</a>
+              <a href="#" className="hover:text-gray-500 md:border-l md:border-gray-300 md:pl-6">Connect</a>
+            </div>
+
+            {/* Social & App Badges */}
+            <div className="flex flex-col items-center space-y-8">
+              <div className="flex space-x-6">
+                <a href="#" className="text-gray-400 hover:text-black transition-colors">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <a href="#" className="text-gray-400 hover:text-black transition-colors">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </a>
+                <a href="#" className="text-gray-400 hover:text-black transition-colors">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+              </div>
+              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                <div className="bg-black text-white px-5 py-3 flex items-center space-x-3 rounded cursor-pointer hover:bg-gray-800 transition-colors">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.523 15.3414C17.523 15.3414 16.208 17.7814 14.07 19.4674C13.064 20.2644 11.536 21.0364 9.68903 21.0364C5.11103 21.0364 1.49303 17.5004 1.49303 12.0184C1.49303 6.64344 5.23003 3.01244 9.77103 3.01244C11.579 3.01244 12.986 3.69344 14.156 4.54244C16.326 6.11544 17.523 8.66544 17.523 8.66544L14.832 10.2224C14.832 10.2224 14.088 8.63444 12.569 7.50444C11.83 6.95344 10.871 6.46744 9.73003 6.46744C6.91803 6.46744 4.88703 8.69244 4.88703 12.0184C4.88703 15.3944 6.94503 17.5814 9.71203 17.5814C10.741 17.5814 11.666 17.1594 12.443 16.5514C13.844 15.4544 14.73 13.7844 14.73 13.7844H9.86603V10.6694H18.232C18.232 10.6694 18.271 11.2334 18.271 11.8684C18.271 13.1254 18.069 14.3314 17.523 15.3414Z"/></svg>
+                  <div className="text-left">
+                    <span className="block text-[10px] leading-none text-gray-300">GET IT ON</span>
+                    <span className="block text-sm font-bold leading-none mt-1">Google Play</span>
+                  </div>
+                </div>
+                <div className="bg-black text-white px-5 py-3 flex items-center space-x-3 rounded cursor-pointer hover:bg-gray-800 transition-colors">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M16.365 21.442c-1.391.89-2.736.936-4.148.067-1.402-.853-2.65-.89-4.2-.023-3.693 2.102-7.16-3.793-4.524-8.31 1.077-1.849 2.825-2.91 4.582-2.936 1.488-.024 2.883.993 3.805.993.921 0 2.653-1.258 4.417-1.071 1.846.196 3.518 1.104 4.47 2.664-3.832 2.221-3.189 7.426.685 9.027-1.127 2.766-3.237 3.308-5.087 3.589zm-1.854-15.111c-1.201-.225-2.693-1.075-3.528-2.314-.852-1.246-1.503-3.037-1.272-4.428 1.171.187 2.831 1.056 3.737 2.37.893 1.282 1.547 2.973 1.285 4.372h-.222z"/></svg>
+                  <div className="text-left">
+                    <span className="block text-[10px] leading-none text-gray-300">Download on the</span>
+                    <span className="block text-sm font-bold leading-none mt-1">App Store</span>
+                  </div>
+                </div>
               </div>
             </div>
-
-            {/* Links - Shop */}
-            <div className="md:col-span-2 md:col-start-7">
-              <h3 className="text-xs font-bold uppercase tracking-widest mb-6 text-gray-500">Shop</h3>
-              <ul className="space-y-4 text-sm">
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">All Products</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Best Sellers</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">New Arrivals</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Gift Cards</a></li>
-              </ul>
-            </div>
-
-            {/* Links - Support */}
-            <div className="md:col-span-2">
-              <h3 className="text-xs font-bold uppercase tracking-widest mb-6 text-gray-500">Support</h3>
-              <ul className="space-y-4 text-sm">
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Shipping & Returns</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Track Order</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Contact Us</a></li>
-              </ul>
-            </div>
-
-            {/* Links - Social */}
-            <div className="md:col-span-2">
-              <h3 className="text-xs font-bold uppercase tracking-widest mb-6 text-gray-500">Follow Us</h3>
-              <ul className="space-y-4 text-sm">
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Instagram</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Twitter</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Facebook</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Pinterest</a></li>
-              </ul>
-            </div>
-
           </div>
-          
-          {/* Bottom Bar */}
-          <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 uppercase tracking-widest">
-            <p>&copy; {new Date().getFullYear()} Poshanful.</p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="hover:text-white transition-colors">Privacy</a>
-              <a href="#" className="hover:text-white transition-colors">Terms</a>
-            </div>
+
+          {/* Right: Contact Details */}
+          <div className="md:w-1/4 text-center md:text-left text-xs text-gray-500 space-y-4 font-medium tracking-wide leading-relaxed mt-8 md:mt-0">
+            <p className="font-bold text-black uppercase">Poshanful Foods Private Limited</p>
+            <p>11th FLOOR, N-1104, JASMINIUM BUILDING,<br/>MAGARPATTA CITY, HADAPSAR, Pune,<br/>Maharashtra, 411028</p>
+            <p>Email: <a href="mailto:info@poshanful.com" className="underline hover:text-black">info@poshanful.com</a></p>
+            <p>Tel: +91 98765 43210</p>
+            <p>Grievances: +91 98765 43210</p>
           </div>
+        </div>
+
+        {/* Bottom Banner */}
+        <div className="container mx-auto max-w-7xl mt-16 pt-6 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center text-[10px] md:text-xs text-gray-400 uppercase tracking-widest gap-4">
+           <p>© 2026 POSHANFUL ORGANIC FARMS. ALL RIGHTS RESERVED.</p>
+           <p>MADE WITH LOVE</p>
         </div>
       </footer>
     </div>
