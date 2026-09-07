@@ -5,6 +5,7 @@
   --animate-marquee: marquee 25s linear infinite;
   --animate-float-3d: float3d 6s ease-in-out infinite;
   --animate-spin-slow: spin 10s linear infinite;
+  --animate-spin-ultra-smooth: spin 12s linear infinite;
   --animate-scroll-x: scroll-x 40s linear infinite;
   
   @keyframes marquee {
