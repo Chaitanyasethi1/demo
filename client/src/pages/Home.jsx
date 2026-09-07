@@ -12,6 +12,14 @@ import prod2 from '../assets/product_2.jpg';
 import prod3 from '../assets/product_3.jpg';
 import prod4 from '../assets/product_4.jpg';
 
+const reviews = [
+  { id: 1, name: "NITHIN KAMATH", desc: "Founder, Rainmatter", text: "At Rainmatter Health, we care deeply about what we eat. Two Brothers stood out—clean food, deep purpose, and a clear mission.", img: prod1 },
+  { id: 2, name: "ANAND S AHUJA", desc: "Founder, Bhaane", text: "Pure love, pure taste, pure intention. Every product feels authentic and full of heart—from how it's grown to how it tastes.", img: prod2 },
+  { id: 3, name: "MIRA KAPOOR", desc: "India", text: "One of the few brands that makes ghee the traditional way—from dahi, not malai. Delicious, wholesome, and always a repeat buy.", img: prod3 },
+  { id: 4, name: "SHILPA SHETTY", desc: "Actor", text: "I absolutely love their organic jaggery and cold-pressed oils. A staple in my kitchen for my family's health.", img: prod4 },
+  { id: 5, name: "VIRAT KOHLI", desc: "Athlete", text: "Eating clean is non-negotiable for me. The transparency and quality of their products is unmatched.", img: prod1 },
+];
+
 const heroes = [
   { img: hero1, title: 'Pure Organics.' },
   { img: hero2, title: 'Golden Ghee.' },
@@ -217,6 +225,42 @@ export function Home() {
              <p className="text-sm font-bold uppercase tracking-widest">Rahul Sharma</p>
           </div>
         </section>
+        {/* 5. Infinite Auto-Scrolling Testimonials */}
+        <section className="py-24 bg-gray-50 overflow-hidden relative border-t border-gray-100">
+          <div className="container mx-auto px-4 mb-16 text-center">
+            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-black">What They Say</h2>
+            <div className="w-24 h-1 bg-black mx-auto mt-6"></div>
+          </div>
+          
+          {/* Scrolling Container */}
+          <div className="relative w-full flex overflow-hidden">
+            {/* The animated track */}
+            <div className="flex space-x-8 px-4 w-max animate-scroll-x hover:[animation-play-state:paused]">
+              {[...reviews, ...reviews].map((review, i) => (
+                <div key={i} className="w-[320px] md:w-[450px] flex-shrink-0 bg-white border border-gray-100 p-8 pt-12 relative mt-10 shadow-sm hover:shadow-xl transition-shadow rounded-sm">
+                  {/* Avatar */}
+                  <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-20 h-20 rounded-full border-4 border-white shadow-lg overflow-hidden bg-gray-200">
+                    <img src={review.img} alt={review.name} className="w-full h-full object-cover" />
+                  </div>
+                  {/* Stars */}
+                  <div className="flex justify-center text-black mb-6 mt-4">
+                    {[1,2,3,4,5].map(star => (
+                      <svg key={star} className="w-4 h-4 md:w-5 md:h-5 fill-current mx-0.5" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                    ))}
+                  </div>
+                  {/* Text */}
+                  <p className="text-gray-600 text-center text-sm md:text-base leading-relaxed italic mb-6">"{review.text}"</p>
+                  {/* Author */}
+                  <div className="text-center border-t border-gray-100 pt-6">
+                    <h4 className="font-black uppercase tracking-widest text-black text-sm">{review.name}</h4>
+                    <p className="text-xs text-gray-400 uppercase tracking-widest mt-1">{review.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
       </main>
       
       {/* Footer */}
