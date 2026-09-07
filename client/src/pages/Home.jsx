@@ -51,33 +51,43 @@ export function Home() {
       <Header />
       <main className="flex-grow">
         
-        {/* 1. Edge-to-Edge Hero Carousel */}
-        <section className="relative h-[60vh] md:h-[85vh] w-full overflow-hidden bg-black">
-          {heroes.map((hero, idx) => (
-            <div 
-              key={idx} 
-              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${idx === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
-            >
-              <img src={hero.img} alt={hero.title} className="w-full h-full object-cover opacity-80" />
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-4">
-                <h1 className="text-4xl md:text-7xl font-black uppercase tracking-tighter mb-8 text-center drop-shadow-lg">
-                  {hero.title}
-                </h1>
-                <button className="bg-white text-black px-8 py-4 uppercase tracking-widest text-xs font-bold hover:bg-gray-200 transition-colors">
-                  Shop Now
-                </button>
-              </div>
-            </div>
-          ))}
-          
-          <div className="absolute bottom-6 left-0 right-0 z-20 flex justify-center space-x-2">
-            {heroes.map((_, idx) => (
-              <button 
-                key={idx}
-                onClick={() => setCurrentSlide(idx)}
-                className={`h-1 transition-all duration-300 ${idx === currentSlide ? 'w-10 bg-white' : 'w-4 bg-white/40'}`}
+        {/* 1. 3D Intro Hero Section */}
+        <section className="relative w-full h-[90vh] md:h-screen bg-black overflow-hidden flex items-center justify-center">
+          {/* Background Text (Parallax Effect) */}
+          <div className="absolute inset-0 flex items-center justify-center opacity-10 select-none z-0 pointer-events-none">
+            <h1 className="text-[15rem] md:text-[30rem] font-black text-white whitespace-nowrap tracking-tighter" style={{ lineHeight: 0.8 }}>
+              ORGANIC
+            </h1>
+          </div>
+
+          {/* 3D Content Container */}
+          <div className="container mx-auto px-4 relative z-10 flex flex-col items-center justify-center h-full text-center perspective-[1200px]">
+            
+            <div className="relative w-64 h-64 md:w-[400px] md:h-[400px] animate-float-3d mb-12" style={{ transformStyle: 'preserve-3d' }}>
+              {/* Glow Behind */}
+              <div className="absolute inset-0 bg-white/20 rounded-full blur-[100px] transform"></div>
+              
+              <img 
+                src={prod1} 
+                alt="3D Almond Intro" 
+                className="w-full h-full object-cover rounded-full border-4 border-white/10"
+                style={{
+                  boxShadow: '0 50px 100px -20px rgba(0,0,0,0.8), inset 0 0 0 1px rgba(255,255,255,0.2)',
+                  transform: 'translateZ(100px)'
+                }}
               />
-            ))}
+            </div>
+
+            <h2 className="text-white text-5xl md:text-8xl font-black uppercase tracking-tight mb-6" style={{ transform: 'translateZ(50px)' }}>
+              Pure Nature.
+            </h2>
+            <p className="text-gray-300 max-w-xl text-lg md:text-xl font-light tracking-wide mb-10" style={{ transform: 'translateZ(30px)' }}>
+              Experience the finest, ethically sourced organic almonds. Untouched by chemicals, perfected by nature.
+            </p>
+            <button className="bg-white text-black px-12 py-5 uppercase tracking-widest text-sm font-bold hover:bg-gray-200 hover:scale-105 transition-all shadow-[0_0_40px_rgba(255,255,255,0.3)]">
+              Explore Our Farm
+            </button>
+
           </div>
         </section>
 
@@ -98,47 +108,7 @@ export function Home() {
           </div>
         </section>
 
-        {/* 2.5 3D Floating Almond Promotional Section */}
-        <section className="py-24 px-4 bg-gradient-to-b from-gray-50 to-white overflow-hidden relative border-b border-gray-100">
-          <div className="container mx-auto max-w-6xl relative z-10">
-            <div className="flex flex-col md:flex-row items-center justify-between">
-              
-              {/* Text Content */}
-              <div className="md:w-1/2 mb-16 md:mb-0 z-20 text-center md:text-left">
-                <h4 className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4">Harvested Fresh</h4>
-                <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-6 leading-none text-black">
-                  Premium<br />Almonds
-                </h2>
-                <p className="text-gray-600 mb-8 max-w-md mx-auto md:mx-0 text-lg leading-relaxed">
-                  Experience the crisp, buttery texture of our organic almonds. Sourced ethically, packed with nutrients, and floating with flavor.
-                </p>
-                <button className="bg-black text-white px-10 py-4 uppercase tracking-widest text-xs font-bold hover:bg-gray-800 transition-all shadow-xl hover:shadow-2xl">
-                  Shop Almonds
-                </button>
-              </div>
 
-              {/* 3D Floating Image */}
-              <div className="md:w-1/2 relative flex justify-center perspective-[1000px]">
-                <div className="relative w-64 h-64 md:w-96 md:h-96 animate-float-3d" style={{ transformStyle: 'preserve-3d' }}>
-                  {/* Shadow glow effect */}
-                  <div className="absolute inset-0 bg-black/10 rounded-full blur-3xl transform -translate-y-8 translate-x-8"></div>
-                  
-                  {/* Floating Image */}
-                  <img 
-                    src={prod1} 
-                    alt="Premium Almonds 3D" 
-                    className="w-full h-full object-cover rounded-full border-8 border-white" 
-                    style={{
-                      boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(0,0,0,0.05)',
-                      transform: 'translateZ(50px)'
-                    }} 
-                  />
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </section>
 
         {/* 3. Bestsellers Strip */}
         <section className="py-20 px-4">
