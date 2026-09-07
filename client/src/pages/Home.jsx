@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Header } from '../components/layout/Header';
+import logo from '../assets/logo.jpg';
 
 import hero1 from '../assets/hero_1.jpg';
 import hero2 from '../assets/hero_2.jpg';
