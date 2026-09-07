@@ -4,6 +4,7 @@
 @theme {
   --animate-marquee: marquee 25s linear infinite;
   --animate-float-3d: float3d 6s ease-in-out infinite;
+  --animate-spin-slow: spin 10s linear infinite;
   
   @keyframes marquee {
     0% { transform: translateX(100%); }
