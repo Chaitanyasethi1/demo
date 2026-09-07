@@ -98,6 +98,48 @@ export function Home() {
           </div>
         </section>
 
+        {/* 2.5 3D Floating Almond Promotional Section */}
+        <section className="py-24 px-4 bg-gradient-to-b from-gray-50 to-white overflow-hidden relative border-b border-gray-100">
+          <div className="container mx-auto max-w-6xl relative z-10">
+            <div className="flex flex-col md:flex-row items-center justify-between">
+              
+              {/* Text Content */}
+              <div className="md:w-1/2 mb-16 md:mb-0 z-20 text-center md:text-left">
+                <h4 className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4">Harvested Fresh</h4>
+                <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-6 leading-none text-black">
+                  Premium<br />Almonds
+                </h2>
+                <p className="text-gray-600 mb-8 max-w-md mx-auto md:mx-0 text-lg leading-relaxed">
+                  Experience the crisp, buttery texture of our organic almonds. Sourced ethically, packed with nutrients, and floating with flavor.
+                </p>
+                <button className="bg-black text-white px-10 py-4 uppercase tracking-widest text-xs font-bold hover:bg-gray-800 transition-all shadow-xl hover:shadow-2xl">
+                  Shop Almonds
+                </button>
+              </div>
+
+              {/* 3D Floating Image */}
+              <div className="md:w-1/2 relative flex justify-center perspective-[1000px]">
+                <div className="relative w-64 h-64 md:w-96 md:h-96 animate-float-3d" style={{ transformStyle: 'preserve-3d' }}>
+                  {/* Shadow glow effect */}
+                  <div className="absolute inset-0 bg-black/10 rounded-full blur-3xl transform -translate-y-8 translate-x-8"></div>
+                  
+                  {/* Floating Image */}
+                  <img 
+                    src={prod1} 
+                    alt="Premium Almonds 3D" 
+                    className="w-full h-full object-cover rounded-full border-8 border-white" 
+                    style={{
+                      boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(0,0,0,0.05)',
+                      transform: 'translateZ(50px)'
+                    }} 
+                  />
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
         {/* 3. Bestsellers Strip */}
         <section className="py-20 px-4">
           <div className="container mx-auto max-w-7xl">
