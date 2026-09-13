@@ -337,9 +337,11 @@ export function Home() {
         </div>
 
         {/* Bottom Banner */}
-        <div className="container mx-auto max-w-7xl mt-16 pt-6 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center text-[10px] md:text-xs text-gray-400 uppercase tracking-widest gap-4">
-           <p>© 2026 POSHANFUL ORGANIC FARMS. ALL RIGHTS RESERVED.</p>
-           <p>MADE WITH LOVE</p>
+        <div className="container mx-auto max-w-7xl mt-16 pt-6 border-t border-gray-100 flex flex-col items-center justify-center text-center text-[11px] md:text-xs text-gray-500 tracking-wider gap-2">
+           <p className="uppercase tracking-widest text-[10px] md:text-[11px] text-gray-400">© 2026 POSHANFUL ORGANIC FARMS. ALL RIGHTS RESERVED.</p>
+           <p className="font-medium text-gray-600">
+             Website developed by <span className="font-semibold text-black">ABS (Aggarwal Business Solutions)</span>
+           </p>
         </div>
       </footer>
     </div>
